@@ -4,14 +4,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
 import islandScene from "../assets/3d/island.glb";
-
-export function Island({
-  isRotating,
-  setIsRotating,
-  setCurrentStage,
-  currentFocusPoint,
-  ...props
-}) {
+const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
   const islandRef = useRef();
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
@@ -193,4 +186,5 @@ export function Island({
       />
     </a.group>
   );
-}
+};
+export default Island;
