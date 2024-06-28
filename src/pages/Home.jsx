@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Island from "../models/Island";
@@ -43,7 +43,7 @@ const Home = () => {
 
   const [islandScale, islandPosition, islandRotation] =
     adjustIslandForScreenSize();
-  const [planeScale, planePosition] = adjustPlaneForScreenSize;
+  const [planeScale, planePosition] = adjustPlaneForScreenSize();
   return (
     <section className="w-full h-screen relative">
       <Canvas
@@ -75,7 +75,7 @@ const Home = () => {
             isRotating={isRotating}
             planeScale={planeScale}
             planePosition={planePosition}
-            rotation={(0, 20, 0)}
+            rotation={[0, 20, 0]}
           />
         </Suspense>
       </Canvas>
