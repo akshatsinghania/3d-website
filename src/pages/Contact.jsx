@@ -2,7 +2,7 @@ import React, { Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import Fox from "../models/Fox";
-import { Loader } from "@react-three/drei";
+import Loader from "../components/Loader";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -87,12 +87,17 @@ const Contact = () => {
         <Canvas
           camera={{
             position: [0, 0, 5],
+            fov: 75,
+            near: 0.1,
+            far: 1000,
           }}
         >
+          <directionalLight intensity={2.5} position={[0, 0, 1]} />
+          <ambientLight intensity={0.5} />
           <Suspense fallback={<Loader />}>
             <Fox
               position={[0.5, 0.35, 0]}
-              rotation={[12, 0, 0]}
+              rotation={[12.6, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
             />
           </Suspense>
