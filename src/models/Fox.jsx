@@ -7,7 +7,13 @@ const Fox = ({ currentAnimation, ...props }) => {
   const { nodes, materials, animations } = useGLTF(scene);
   const { actions } = useAnimations(animations, group);
 
-  useEffect(() => {}, [actions, currentAnimation]);
+  useEffect(() => {
+    Object.values(actions).forEach((actions) => actions.stop());
+
+    if (actions[currentAnimation]) {
+      actions[currentAnimation].play();
+    }
+  }, [actions, currentAnimation]);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
