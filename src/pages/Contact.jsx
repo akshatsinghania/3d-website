@@ -19,11 +19,14 @@ const Contact = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
     setcurrentAnimation("hit");
+    showAlert({
+      show: true,
+      text: "Message sent sucessfully!",
+      type: "success",
+    });
   };
-
-  showAlert({ show: true, text: "Message sent sucessfully!", type: "success" });
 
   setTimeout(() => {
     hideAlert();
