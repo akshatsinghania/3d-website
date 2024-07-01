@@ -18,12 +18,14 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+    e.preventDefault(5000); // setIsLoading(true);
     setcurrentAnimation("hit");
+    showAlert({
+      show: true,
+      text: "Message sent sucessfully!",
+      type: "success",
+    });
   };
-
-  showAlert({ show: true, text: "Message sent sucessfully!", type: "success" });
 
   setTimeout(() => {
     hideAlert();
@@ -36,13 +38,11 @@ const Contact = () => {
   return (
     <section className="relative flex lg:flex-row flex-col max-conatiner">
       {alert.show && <Alert {...alert} />}
-      <Alert {...alert} />
       <div className="flex-1 min-w-[50%] flex flex-col ">
         <h1 className="head-text">Get in touch</h1>
-
         <form className="w-full flex-col gap-7 mt-14" onSubmit={handleSubmit}>
           <label className="text-black-500 font-semibold">
-            Name
+            name
             <input
               type="text"
               name="name"
@@ -57,7 +57,7 @@ const Contact = () => {
           </label>
 
           <label className="text-black-500 font-semibold">
-            Email
+            mail
             <input
               type="email"
               name="email"
@@ -72,7 +72,7 @@ const Contact = () => {
           </label>
 
           <label className="text-black-500 font-semibold">
-            Your Message
+            our Message
             <textarea
               name="message"
               rows={4}
@@ -97,7 +97,6 @@ const Contact = () => {
           </button>
         </form>
       </div>
-
       <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
         <Canvas
           camera={{
@@ -108,7 +107,7 @@ const Contact = () => {
           }}
         >
           <directionalLight intensity={2.5} position={[0, 0, 1]} />
-          <ambientLight intensity={0.5} />
+          <ambientLight intensity={0.5} /> {" "}
           <Suspense fallback={<Loader />}>
             <Fox
               currentAnimation={currentAnimation}
