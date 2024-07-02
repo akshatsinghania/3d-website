@@ -1,4 +1,5 @@
 import React from "react";
+import { skills } from "../constants";
 
 const About = () => {
   return (
@@ -14,7 +15,25 @@ const About = () => {
           Software Engineer based in India, speciaizing in technical education
           through hands on learning and building applications
         </p>
-        <div></div>
+        <div>
+          <div className="py-10 flex flex-col">
+            <h3 className="subhead-text">My skills</h3>
+
+            <div className="mt-16 flex flex-wrap gap-12">
+              {skills.map((skill) => (
+                <div className=" block-container w-20  h-20 ">
+                  <div className="btn-front rounded-xl flex justify-centern items-center">
+                    <img
+                      src={skill.imageUrl}
+                      alt={skill.name}
+                      className="w-1/2 h-1/2 object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
