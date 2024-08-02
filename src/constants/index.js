@@ -57,26 +57,7 @@ export const skills = [
     name: "JavaScript",
     type: "Frontend",
   },
-  {
-    imageUrl: mongodb,
-    name: "MongoDB",
-    type: "Database",
-  },
-  {
-    imageUrl: motion,
-    name: "Motion",
-    type: "Animation",
-  },
-  {
-    imageUrl: mui,
-    name: "Material-UI",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nextjs,
-    name: "Next.js",
-    type: "Frontend",
-  },
+
   {
     imageUrl: nodejs,
     name: "Node.js",
@@ -92,11 +73,7 @@ export const skills = [
     name: "Redux",
     type: "State Management",
   },
-  {
-    imageUrl: sass,
-    name: "Sass",
-    type: "Frontend",
-  },
+
   {
     imageUrl: tailwindcss,
     name: "Tailwind CSS",
@@ -111,17 +88,37 @@ export const skills = [
 
 export const experiences = [
   {
-    iconBg: "#accbe1",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
+    title: "Heading 1",
+    company_name: "Company",
+    icon: shopify,
+    iconBg: "#fbc3bc",
+    date: "date",
+    points: ["TEST"],
   },
-  {},
-  {},
-  {},
+  {
+    title: "Heading 2",
+    company_name: "Company",
+    icon: shopify,
+    iconBg: "#fbc3bc",
+    date: "date",
+    points: ["TEST"],
+  },
+  {
+    title: "heading 3",
+    company_name: "Company",
+    icon: shopify,
+    iconBg: "#fbc3bc",
+    date: "date",
+    points: ["TEST"],
+  },
+  {
+    title: "Heading 4",
+    company_name: "Company",
+    icon: shopify,
+    iconBg: "#fbc3bc",
+    date: "date",
+    points: ["TEST"],
+  },
 ];
 
 export const socialLinks = [
